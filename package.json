@@ -1,0 +1,16 @@
+{
+  "name": "api-p2p-video-chat",
+  "version": "1.0.0",
+  "description": "Create rooms using websocket to help users connect using webrtc",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {}
+}

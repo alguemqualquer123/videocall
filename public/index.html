@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <title>Video chat</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+        <link type="text/css" rel="stylesheet" href="css/video.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <div id="loading" class="center">
+            <div class="preloader-wrapper big active">
+                <div class="spinner-layer spinner-green-only">
+                  <div class="circle-clipper left">
+                    <div class="circle"></div>
+                  </div><div class="gap-patch">
+                    <div class="circle"></div>
+                  </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div id="fail" class="row hide">
+            <div class="col s12 m4 offset-m4" >
+                <div class="card pink white-text">
+                    <div class="card-content">
+                        <p>We can't connect you because we don't find your microphone and camera.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="connect" class="row hide" >
+            <div class="col s12 m4 offset-m4" >
+                <div class="card">
+                    <div class="card-action teal lighten-1 white-text" >
+                        <h3 class="card-title" >Video Chat P2P</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="row">
+                            <div class="col s6">
+                                <form id="roomForm" >
+                                    <div class="row input-field">
+                                        <input id="inputRoom" placeholder="room name" type="text" required>
+                                        <label for="inputRoom">Room name:</label>
+                                    </div><br>
+                                    <button type="submit" style="width: 100%;" class="btn-large waves-effect waves-dark">Enter</button>
+                                </form>
+                            </div>
+                            <div class="col s6">
+                                <div class="videoWrapper" >
+                                    <video id="preview-player" class="responsive-video" autoplay muted></video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="players" class="hide">
+            <nav>
+                <div class="nav-wrapper teal">
+                  <ul class="right">
+                    <li><a id="leave"><i class="material-icons">exit_to_app</i></a></li>
+                  </ul>
+                </div>
+            </nav>
+            <div class="row" style="padding: 5px !important;" >
+                <div id="players-row" class="row col s9">
+                    <div class="col">
+                        <div class="card videoWrapper" >
+                            <video id="local-player" class="responsive-video" autoplay muted></video>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s3">
+                    <div class="row">
+                        <form id="chatForm" >
+                                <div class="input-field">
+                                    <input id="inputChatMessage" placeholder="Message" type="text" required>
+                                    <label for="inputChatMessage">Message:</label>
+                                </div><br>
+                                <button type="submit" style="width: 100%;" class="btn-large waves-effect waves-dark">
+                                    <i class="material-icons">send</i>
+                                </button>
+                        </form>
+                    </div>
+                    <div id="message-printer" class="row">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script src="https://cdn.socket.io/socket.io-2.3.0.js"></script>
+        <script src="js/user.js"></script>
+        <script src="js/peer.js"></script>
+        <script src="js/page.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>
